@@ -4,9 +4,13 @@ import random
 
 server = 'irc.freenode.net'
 channel = '#channel'
-nick_criminal1 = 'In-Hee Lee'
 top30_list = ["Soo-Min Lee", "Chang-Wook Song", "Young-Won Seo", "Gyo-Hyun Lee", "Je-Hyun Hwang", "Joo-Won Cho", "Yong-Hoon Shin"]
+
+nick_criminal1 = random.choice(top30_list)
+top30_list.remove(nick_criminal1)
 nick_criminal2 = random.choice(top30_list)
+top30_list.append(nick_criminal1)
+
 # Send and receive messages
 while True:
     # Create a socket for each client
@@ -37,12 +41,11 @@ while True:
     print(f"Criminal2 response: {response_criminal2}")  # Print the response from the server for debugging
 
     # if response_criminal1.find('001') != -1:
-    irc_criminal1.send(
-    bytes('PRIVMSG ' + channel + ' :' + 'HI! ^^  RkxBR3vsnbTsnbTsnokg64KYIOydtOydtOuLiOKZpX0K' + '\r\n', 'UTF-8'))
+    irc_criminal1.send(bytes('PRIVMSG ' + channel + ' :' + 'HI! How are You' + '\r\n', 'UTF-8'))
     print("Criminal1 sent: hi")  # Print the message sent by the client for debugging
 
     time.sleep(1)
 
     #if response_criminal2.find('PRIVMSG') != -1:
-    irc_criminal2.send(bytes('PRIVMSG ' + channel + ' :' + 'Go Away Fuck!' + '\r\n', 'UTF-8'))
+    irc_criminal2.send(bytes('PRIVMSG ' + channel + ' :' + 'Im Fine thanks' + '\r\n', 'UTF-8'))
     print("Criminal2 sent: bye")  # Print the message sent by the client for debugging
