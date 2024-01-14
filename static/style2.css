@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.terminal {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+#macAddress {
+            width: 80%;       /* 입력 칸의 너비 */
+            height: 40px;     /* 입력 칸의 높이 */
+            font-size: 16px;  /* 텍스트 크기 */
+            margin-top: 20px; /* 상단 여백 */
+            padding: 5px;     /* 내부 여백(패딩) */
+        }
+
+.center-container {
+            text-align: center;
+        }
+
+.command-input {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+}
+
+.result {
+    margin: 20px 0;
+    color: #333;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

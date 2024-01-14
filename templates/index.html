@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>나의 CTF 문제 풀이 환경</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+
+    </head>
+    <body>
+        <h1>BoB 12 Top 30 CTF -Network-</h1>
+        <p>BoB 12기 제품개발트랙은 이경문 책임멘토님의 명령하에 연애가 절대 금지되었다.</p>
+            <p>그러나 특정 멘티 한명이 하라는 과제는 안하고, 어떤 멘티에게 암호화된 사랑메시지를 보내어 그 분위기를 흐리고 있다.</p>
+            <p>모든 멘티가 그와의 대화를 피하고 있다.</p>
+            <p>이번사태의 수사단장 박수현 멘토님은 당신에게 그 멘티를 찾아달라는 특명을 내렸다.</p>
+            <p>Terminal에서 명령어를 통해 그 멘티를 찾고 그가 보내는 사랑의 메시지{flag}를 찾아보자!</p>
+        <div class="terminal">
+            <div class="prompt"></div>
+            <form action="/simulate" method="post">
+                <input type="text" id = "command" name="command" class="command-input">
+            </form>
+        </div>
+        {% if result %}
+        <div>
+            <div class="result">
+                <pre>{{result}}</pre>
+            </div>
+        </div>
+        {% endif %}
+        {% if command %}
+
+        <div class="result">
+            <div class="prompt"> $ {{ command }} </div>
+        </div>
+        {% endif %}
+
+        <div class="button-container">
+            <button onclick="openModel()">정답입력</button>
+        </div>
+        <div id = "myModel" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModel()">&times;</span>
+                <p><strong>사랑의 메시지 입력</strong></p>
+                <input type="text" id="macAddress" placeholder="FLAG 전체를 입력하세요 ex>FLAG{THIS IS FLAG}">
+                <div class="button-container">
+                    <button onclick="checkMacAddress()">확인</button>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            function openModel() {
+                const myModel = document.getElementById('myModel');
+                myModel.style.display = "block";
+            }
+
+            function closeModel() {
+                const myModel = document.getElementById('myModel');
+                myModel.style.display = "none";
+            }
+
+            function checkMacAddress() {
+                const submittedMacAddress = document.getElementById('macAddress').value;
+
+            fetch('/answer', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `macAddress=${encodeURIComponent(submittedMacAddress)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.result);
+            });
+    }
+
+        </script>
+    </body>
+</html>
