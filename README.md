@@ -1,5 +1,8 @@
 # CTF_Platform
 
+![스크린샷 2024-01-14 175222](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/6f689cf5-eed7-43ea-b97b-3c11d629e099)
+
+
 ## 1. Development
 
 ### 1) 환경 구축
@@ -79,7 +82,7 @@ def simulate():
     return render_template('index.html', command=command, result=result)
 
 ```
-원래 tcpdump를 통해 동적으로 패킷의 오고감을 프론트에까지 전달해보고 싶었지만 시간관계상 하지 못했다. 
+원래 tcpdump를 통해 동적으로 패킷의 오고감을 프론트에까지 전달해보고 싶었지만 시간관계상 하지 못했다.(추후 연구..)
 그래서 결국 따라서 tcpdump에서 -w 옵션을 사용자에게 힌트로 주어서 pcap파일을 다운로드 받게끔 수정하였다.
 
 ## 2. Simple Write Up
@@ -93,13 +96,24 @@ def simulate():
 
 와이어 샤크에서 분석 가능!
 
-### 3) IRC 패킷만 추출
+### 3) 패킷 관찰
+IRC 패킷들을 볼 수있음, IRC(Internet Relay Chat) 이름에서부터 충분히 유추가능하다.
+특히 PRIVMSG는 IRC (Internet Relay Chat) 프로토콜에서 매우 중요하다.
+PRIVMSG는 사용자가 다른 사용자에게 개인 메시지를 보내거나, 채널(그룹 채팅)에 메시지를 보내는 데 사용된다.
+
+### 3) IRC  & PRIVMSG 메시지 패킷 추출
+> irc.request.command == "PRIVMSG"
+![스크린샷 2024-01-14 174815](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/4e8bc970-60d9-4e3f-9618-5f3ad197a25a)
 
 
-### 3) IRC 패킷에서 메시지 담긴 패킷만 추출
-
-### 4) 범인 추적
+### 4) 메시지 추적
+![스크린샷 2024-01-14 174858](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/c8d007cd-606b-41ad-876b-e0e5fc009bf5)
+수상한 인코딩 형식 발견
 
 ### 5) Base 64 디코딩
+![스크린샷 2024-01-14 175002](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/21e32c02-9da8-455c-91d8-8052c2b893c8)
+플래그 발견
 
-### 6) 범인, FLAG 입력
+### 6) FLAG 입력
+![스크린샷 2024-01-14 175120](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/8169063f-ac9a-40b6-9d82-994ff86feb8f)
+
