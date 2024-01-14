@@ -6,7 +6,8 @@
 ## 1. Development
 
 ### 1) 환경 구축
-![Frame 1 (1)](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/c0749320-d396-4868-b25b-15c06f255e9a)
+![Frame 1 (2)](https://github.com/BoB-Dev-Top30/CTF_Platform/assets/109223193/00c6c0d6-d2aa-4552-91b4-800a6afdcfeb)
+
 
 
 
@@ -83,7 +84,7 @@ def simulate():
 
 ```
 원래 tcpdump를 통해 동적으로 패킷의 오고감을 프론트에까지 전달해보고 싶었지만 시간관계상 하지 못했다.(추후 연구..)
-그래서 결국 따라서 tcpdump에서 -w 옵션을 사용자에게 힌트로 주어서 pcap파일을 다운로드 받게끔 수정하였다.
+그래서 결국 tcpdump에서 -w 옵션을 사용자에게 힌트로 주어서 pcap파일을 다운로드 받게끔 수정하였다.
 pcap파일은 위의  <strong>[1) 환경구축](#1-환경-구축)</strong>의 환경을 구축하고 CTF 서버에서 직접 dump를 뜬 파일이다. 
 
 ## 2. Simple Write Up
