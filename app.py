@@ -34,7 +34,6 @@ def do_simulation(command):
     if 'tcpdump' in command:
         if '-w' in command:
             try:
-                # pcap 파일을 응답으로 전송합니다.
                 return "send_file"
             except Exception as e:
                 return f"파일 다운로드 중 오류가 발생했습니다: {str(e)}"
