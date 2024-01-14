@@ -1,9 +1,10 @@
 # CTF_Platform
 
-## 1 <Development>
+## 1. Development
 
 ### 1) 환경 구축
-![Frame 1](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/c37a9e4d-9de5-4aa9-beb9-dd6ea75958aa)
+![Frame 1 (1)](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/c0749320-d396-4868-b25b-15c06f255e9a)
+
 
 
 ### 2) IRC(Internet Relay Chat)
@@ -81,17 +82,18 @@ def simulate():
 원래 tcpdump를 통해 동적으로 패킷의 오고감을 프론트에까지 전달해보고 싶었지만 시간관계상 하지 못했다. 
 그래서 결국 따라서 tcpdump에서 -w 옵션을 사용자에게 힌트로 주어서 pcap파일을 다운로드 받게끔 수정하였다.
 
-## 2 <Simple Write Up>
+## 2. Simple Write Up
 ### 1) 인터페이스 카드 확인
 > ifconfig
+![스크린샷 2024-01-14 173128](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/1961472f-15fb-4d33-89d0-02879fb34b74)
 
-### 1) 패킷 다운로드
+### 2) 패킷 다운로드
 
 > tcpdump -i ens33 -w network_info.pcap
 
 와이어 샤크에서 분석 가능!
 
-### 2) IRC 패킷만 추출
+### 3) IRC 패킷만 추출
 
 
 ### 3) IRC 패킷에서 메시지 담긴 패킷만 추출
