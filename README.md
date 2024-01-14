@@ -1,6 +1,6 @@
 # CTF_Platform
+![스크린샷 2024-01-14 175222](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/b78dac7b-2af7-4a7d-aaf9-8f1efd3a866e)
 
-![스크린샷 2024-01-14 175222](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/6f689cf5-eed7-43ea-b97b-3c11d629e099)
 
 
 ## 1. Development
@@ -90,7 +90,8 @@ pcap파일은 위의  <strong>[1) 환경구축](#1-환경-구축)</strong>의 �
 ## 2. Simple Write Up
 ### 1) 인터페이스 카드 확인
 > ifconfig
-![스크린샷 2024-01-14 173128](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/1961472f-15fb-4d33-89d0-02879fb34b74)
+![스크린샷 2024-01-14 173128](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/a6477891-2466-4ffb-8a2e-cffef995190f)
+
 
 ### 2) 패킷 다운로드
 
@@ -105,17 +106,19 @@ PRIVMSG는 사용자가 다른 사용자에게 개인 메시지를 보내거나,
 
 ### 3) IRC  & PRIVMSG 메시지 패킷 추출
 > irc.request.command == "PRIVMSG"
-![스크린샷 2024-01-14 174815](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/4e8bc970-60d9-4e3f-9618-5f3ad197a25a)
+![스크린샷 2024-01-14 174815](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/2066a424-2a6f-48a7-aca1-6ed77a65eddd)
+
 
 
 ### 4) 메시지 추적
-![스크린샷 2024-01-14 174858](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/c8d007cd-606b-41ad-876b-e0e5fc009bf5)
+![스크린샷 2024-01-14 174858](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/d934b354-3c5a-4e31-bdee-e2951f34d6df)
 수상한 인코딩 형식 발견
 
 ### 5) Base 64 디코딩
-![스크린샷 2024-01-14 175002](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/21e32c02-9da8-455c-91d8-8052c2b893c8)
+![스크린샷 2024-01-14 175002](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/23febc6b-a73d-4a2e-96b5-b418f4688fea)
 플래그 발견
 
 ### 6) FLAG 입력
-![스크린샷 2024-01-14 175120](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/8169063f-ac9a-40b6-9d82-994ff86feb8f)
+![스크린샷 2024-01-14 175120](https://github.com/S-SIRIUS/CTF_Platform/assets/109223193/c3301131-6a65-4422-a9f0-dddce6dc9f9e)
+
 
